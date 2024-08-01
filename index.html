@@ -1,39 +1,18 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Random Video Links</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      flex-direction: column;
-    }
-    #video-link {
-      margin-top: 20px;
-      font-size: 1.2em;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Video API</title>
 </head>
 <body>
-  <h1>احصل على رابط فيديو عشوائي</h1>
-  <button onclick="getRandomVideoLink()">احصل على الرابط</button>
-  <div id="video-link"></div>
+    <h1>اضغط على الزر للحصول على فيديو عشوائي</h1>
+    <button onclick="goToRandomVideo()">احصل على فيديو عشوائي</button>
 
-  <script>
-    async function getRandomVideoLink() {
-      try {
-        const response = await fetch('/api/videos');
-        const data = await response.json();
-        document.getElementById('video-link').innerText = data.link;
-      } catch (error) {
-        console.error('Error fetching the video link:', error);
-      }
-    }
-  </script>
+    <script>
+        function goToRandomVideo() {
+            window.location.href = '/video';
+        }
+    </script>
 </body>
 </html>
